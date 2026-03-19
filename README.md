@@ -12,12 +12,22 @@ A calm, focused dashboard for tracking average 100m pool swim times from Strava.
 
 ### 1. Backend
 
-```bash
-cd backend
-STRAVA_CLIENT_ID=<id> STRAVA_CLIENT_SECRET=<secret> STRAVA_REFRESH_TOKEN=<token> ./gradlew run
+Create a `backend/.env` file with your Strava credentials:
+
+```
+STRAVA_CLIENT_ID=your_client_id
+STRAVA_CLIENT_SECRET=your_client_secret
+STRAVA_REFRESH_TOKEN=your_refresh_token
 ```
 
-The API server starts on `http://localhost:8080`.
+Then start the server:
+
+```bash
+cd backend
+./gradlew run
+```
+
+The API server starts on `http://localhost:8080`. Access tokens are refreshed automatically.
 
 ### 2. Frontend
 
@@ -32,10 +42,11 @@ Open `http://localhost:5173` in your browser.
 ## Getting a Strava Access Token
 
 1. Go to [Strava API Settings](https://www.strava.com/settings/api) and create an application
-2. Use the [Strava OAuth Playground](https://developers.strava.com/playground/) or the OAuth2 flow to get a refresh token with `activity:read_all` scope
-3. Pass `STRAVA_CLIENT_ID`, `STRAVA_CLIENT_SECRET`, and `STRAVA_REFRESH_TOKEN` as environment variables — the backend auto-refreshes access tokens
-
-> **Note:** The backend automatically refreshes the access token using your refresh token. No manual token management needed.
+2. Use the OAuth2 flow to get a refresh token with `activity:read_all` scope:
+   - Authorize: `https://www.strava.com/oauth/authorize?client_id=YOUR_ID&response_type=code&redirect_uri=http://localhost&scope=activity:read_all&approval_prompt=force`
+   - Copy the `code` from the redirect URL
+   - Exchange: `curl -X POST https://www.strava.com/oauth/token -d client_id=ID -d client_secret=SECRET -d code=CODE -d grant_type=authorization_code`
+3. Save `client_id`, `client_secret`, and `refresh_token` in `backend/.env`
 
 ## Usage
 

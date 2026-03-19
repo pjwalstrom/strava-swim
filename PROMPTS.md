@@ -43,3 +43,5 @@
 21. save all my prompts in this session in a prompt history file in this repo. All my future prompts should also go into that file
 
 22. add a dependabot github action that automatically updates both frontend and backend dependencies
+
+23. update the Getting started section in README.md to show the reduced need to enter TOKEN and SECRET on the CLI when starting the backend
