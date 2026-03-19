@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import {
   ResponsiveContainer,
   LineChart,
@@ -16,17 +15,8 @@ function formatPace(seconds: number): string {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
-function toTimestamp(dateStr: string): number {
-  return new Date(dateStr + "T00:00:00").getTime();
-}
-
-function formatDateTick(timestamp: number): string {
-  const d = new Date(timestamp);
-  return d.toISOString().slice(0, 10);
-}
-
-interface ChartActivity extends SwimActivity {
-  timestamp: number;
+function formatDate(dateStr: string): string {
+  return dateStr;
 }
 
 interface Props {
@@ -39,14 +29,14 @@ function CustomTooltip({
   payload,
 }: {
   active?: boolean;
-  payload?: { payload: ChartActivity }[];
+  payload?: { payload: SwimActivity }[];
 }) {
   if (!active || !payload || payload.length === 0) return null;
   const activity = payload[0].payload;
   return (
     <div className="chart-tooltip">
       <p className="tooltip-name">{activity.name}</p>
-      <p>{activity.date}</p>
+      <p>{formatDate(activity.date)}</p>
       <p>Pace: {formatPace(activity.avgPace100m)}/100m</p>
       <p>Distance: {activity.distance}m</p>
       <p className="tooltip-hint">Click to edit</p>
@@ -80,12 +70,7 @@ function ClickableDot(
 }
 
 export default function SwimChart({ activities, onDotClick }: Props) {
-  const data: ChartActivity[] = useMemo(
-    () => activities.map((a) => ({ ...a, timestamp: toTimestamp(a.date) })),
-    [activities]
-  );
-
-  if (data.length === 0) {
+  if (activities.length === 0) {
     return (
       <div className="chart-container chart-empty">
         <p>No swim activities yet. Add one below.</p>
@@ -97,16 +82,13 @@ export default function SwimChart({ activities, onDotClick }: Props) {
     <div className="chart-container">
       <ResponsiveContainer width="100%" height={350}>
         <LineChart
-          data={data}
+          data={activities}
           margin={{ top: 10, right: 20, bottom: 10, left: 10 }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
           <XAxis
-            dataKey="timestamp"
-            type="number"
-            scale="time"
-            domain={["dataMin", "dataMax"]}
-            tickFormatter={formatDateTick}
+            dataKey="date"
+            tickFormatter={formatDate}
             tick={{ fontSize: 13, fill: "#888" }}
           />
           <YAxis

@@ -1,5 +1,13 @@
 [
     {
+        "id": 17621499386,
+        "name": "Tøyenbadet 1500m",
+        "date": "2026-03-06",
+        "avgPace100m": 132.54166666666669,
+        "distance": 1450.0,
+        "laps": 2
+    },
+    {
         "id": 14980767492,
         "name": "Morning Swim",
         "date": "2025-07-02",
@@ -37,6 +45,14 @@
         "date": "2025-05-30",
         "avgPace100m": 135.33333333333331,
         "distance": 1500.0,
+        "laps": 1
+    },
+    {
+        "id": 14567680623,
+        "name": "Morning Swim Tøyenbadet",
+        "date": "2025-05-23",
+        "avgPace100m": 141.86206896551724,
+        "distance": 1450.0,
         "laps": 1
     },
     {
@@ -160,6 +176,22 @@
         "laps": 1
     },
     {
+        "id": 13271455688,
+        "name": "Lunch Swim",
+        "date": "2025-01-05",
+        "avgPace100m": 208.68571428571428,
+        "distance": 875.0,
+        "laps": 1
+    },
+    {
+        "id": 10229804840,
+        "name": "Evening Swim i Addis",
+        "date": "2023-11-16",
+        "avgPace100m": 121.37777777777778,
+        "distance": 500.0,
+        "laps": 3
+    },
+    {
         "id": 833650818,
         "name": "Morning Swim",
         "date": "2017-01-16",
@@ -181,6 +213,14 @@
         "date": "2016-11-16",
         "avgPace100m": 126.49999999999999,
         "distance": 600.0,
+        "laps": 1
+    },
+    {
+        "id": 766359371,
+        "name": "Afternoon Swim",
+        "date": "2016-11-04",
+        "avgPace100m": 111.00000000000001,
+        "distance": 100.0,
         "laps": 1
     },
     {
@@ -217,32 +257,5 @@
         "distance": 1500.0,
         "laps": 1,
         "elapsedTime": 2041
-    },
-    {
-        "id": 17621499386,
-        "name": "Tøyenbadet 1500m",
-        "date": "2026-03-06",
-        "avgPace100m": 128.12361111111113,
-        "distance": 1500.0,
-        "laps": 2,
-        "elapsedTime": 1921
-    },
-    {
-        "id": 14567680623,
-        "name": "Morning Swim Tøyenbadet",
-        "date": "2025-05-23",
-        "avgPace100m": 137.13333333333333,
-        "distance": 1500.0,
-        "laps": 1,
-        "elapsedTime": 2057
-    },
-    {
-        "id": 13271455688,
-        "name": "Lunch Swim",
-        "date": "2025-01-05",
-        "avgPace100m": 166.0,
-        "distance": 1100.0,
-        "laps": 1,
-        "elapsedTime": 1826
     }
 ]

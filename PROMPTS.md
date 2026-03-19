@@ -50,4 +50,4 @@
 
 25. fix frontend npm install
 
-26. adjust the x-axis to visualize the time difference between activities
+27. undo
