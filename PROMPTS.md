@@ -47,3 +47,5 @@
 23. update the Getting started section in README.md to show the reduced need to enter TOKEN and SECRET on the CLI when starting the backend
 
 24. merge all Pull Requests
+
+25. fix frontend npm install
