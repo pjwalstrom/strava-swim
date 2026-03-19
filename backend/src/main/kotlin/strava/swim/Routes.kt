@@ -5,11 +5,9 @@ import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import org.slf4j.LoggerFactory
-
-private val log = LoggerFactory.getLogger("Routes")
 
 fun Application.configureRoutes(stravaClient: StravaClient, store: ActivityStore) {
+    val log = log
     routing {
         get("/api/activities") {
             val activities = store.loadAll().sortedByDescending { it.date }

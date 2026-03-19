@@ -57,3 +57,5 @@
 29. make the x-axis longer so that all labels are visible
 
 30. increase chart width
+
+31. in Routes.kt, the logger used is not the one configured
