@@ -38,6 +38,7 @@ function CustomTooltip({
       <p className="tooltip-name">{activity.name}</p>
       <p>{formatDate(activity.date)}</p>
       <p>Pace: {formatPace(activity.avgPace100m)}/100m</p>
+      <p>Distance: {activity.distance}m</p>
       <p className="tooltip-hint">Click to edit</p>
     </div>
   );
