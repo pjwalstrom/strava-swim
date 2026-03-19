@@ -10,8 +10,6 @@
 
 5. i get Strava API 404: {"message":"Resource Not Found","errors":[{"resource":"Activity","field":"","code":"not found"}]}, but the activity exists (https://www.strava.com/activities/17621499386)
 
-6. that did not work as it tries to redirect to localhost
-
 7. Unexpected special floating-point value Infinity. By default, non-finite floating point values are prohibited because they do not conform JSON specification. It is possible to deserialize them using 'JsonBuilder.allowSpecialFloatingPointValues = true' Current output: [ { "id": 17621499386, "name": "Tøyenbadet 1500m", "date": "2026-03-06", "avgPace100m": Infinity
 
 8. how can i permanently change the scope of the access_token to read_all?
@@ -49,6 +47,8 @@
 24. merge all Pull Requests
 
 25. fix frontend npm install
+
+26. adjust the x-axis to visualize the time difference between activities
 
 27. undo
 

@@ -1,13 +1,5 @@
 [
     {
-        "id": 17621499386,
-        "name": "Tøyenbadet 1500m",
-        "date": "2026-03-06",
-        "avgPace100m": 132.54166666666669,
-        "distance": 1450.0,
-        "laps": 2
-    },
-    {
         "id": 14980767492,
         "name": "Morning Swim",
         "date": "2025-07-02",
@@ -257,5 +249,14 @@
         "distance": 1500.0,
         "laps": 1,
         "elapsedTime": 2041
+    },
+    {
+        "id": 17621499386,
+        "name": "Tøyenbadet 1500m",
+        "date": "2026-03-06",
+        "avgPace100m": 128.12361111111113,
+        "distance": 1500.0,
+        "laps": 2,
+        "elapsedTime": 1921
     }
 ]
