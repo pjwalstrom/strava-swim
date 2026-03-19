@@ -13,6 +13,7 @@ function App() {
 
   useEffect(() => {
     fetchActivities()
+      .then((a) => a.sort((x, y) => x.date.localeCompare(y.date)))
       .then(setActivities)
       .finally(() => setLoading(false));
   }, []);

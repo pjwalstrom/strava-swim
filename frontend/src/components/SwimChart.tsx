@@ -16,8 +16,7 @@ function formatPace(seconds: number): string {
 }
 
 function formatDate(dateStr: string): string {
-  const d = new Date(dateStr + "T00:00:00");
-  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  return dateStr;
 }
 
 interface Props {
