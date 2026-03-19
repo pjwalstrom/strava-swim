@@ -55,3 +55,5 @@
 28. labels on x-axis should be vertical
 
 29. make the x-axis longer so that all labels are visible
+
+30. increase chart width
