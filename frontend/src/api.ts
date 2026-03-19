@@ -36,3 +36,10 @@ export async function updateActivity(id: number, distance: number): Promise<Swim
   if (!res.ok) throw new Error(await parseError(res, "Failed to update activity"));
   return res.json();
 }
+
+export async function deleteActivity(id: number): Promise<void> {
+  const res = await fetch(`${API_BASE}/api/activities/${id}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) throw new Error(await parseError(res, "Failed to delete activity"));
+}

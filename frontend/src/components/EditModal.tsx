@@ -11,12 +11,14 @@ function formatPace(seconds: number): string {
 interface Props {
   activity: SwimActivity;
   onSave: (id: number, distance: number) => Promise<void>;
+  onDelete: (id: number) => Promise<void>;
   onClose: () => void;
 }
 
-export default function EditModal({ activity, onSave, onClose }: Props) {
+export default function EditModal({ activity, onSave, onDelete, onClose }: Props) {
   const [distance, setDistance] = useState(activity.distance.toString());
   const [saving, setSaving] = useState(false);
+  const [deleting, setDeleting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const previewPace =
@@ -65,10 +67,28 @@ export default function EditModal({ activity, onSave, onClose }: Props) {
           </p>
           {error && <p className="input-error">{error}</p>}
           <div className="modal-actions">
-            <button type="button" className="btn-secondary" onClick={onClose}>
+            <button
+              type="button"
+              className="btn-danger"
+              disabled={deleting || saving}
+              onClick={async () => {
+                setDeleting(true);
+                try {
+                  await onDelete(activity.id);
+                  onClose();
+                } catch (err) {
+                  setError(err instanceof Error ? err.message : "Failed to delete");
+                } finally {
+                  setDeleting(false);
+                }
+              }}
+            >
+              {deleting ? "Deleting..." : "Delete"}
+            </button>
+            <button type="button" className="btn-secondary" onClick={onClose} disabled={saving || deleting}>
               Cancel
             </button>
-            <button type="submit" disabled={saving}>
+            <button type="submit" disabled={saving || deleting}>
               {saving ? "Saving..." : "Save"}
             </button>
           </div>

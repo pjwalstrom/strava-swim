@@ -104,5 +104,16 @@ fun Application.configureRoutes(stravaClient: StravaClient, store: ActivityStore
             log.info("Updated activity $id: distance=${request.distance}, newPace=${newPace}s/100m")
             call.respond(updated)
         }
+
+        delete("/api/activities/{id}") {
+            val id = call.parameters["id"]?.toLongOrNull()
+            if (id == null) {
+                call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Invalid activity ID"))
+                return@delete
+            }
+            store.delete(id)
+            log.info("Deleted activity $id")
+            call.respond(HttpStatusCode.NoContent)
+        }
     }
 }

@@ -40,6 +40,7 @@ fun main() {
             allowHeader(HttpHeaders.ContentType)
             allowMethod(HttpMethod.Post)
             allowMethod(HttpMethod.Put)
+            allowMethod(HttpMethod.Delete)
         }
         install(StatusPages) {
             exception<IllegalStateException> { call, cause ->

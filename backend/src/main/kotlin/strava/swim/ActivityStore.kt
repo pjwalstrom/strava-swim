@@ -25,4 +25,11 @@ class ActivityStore {
             file.writeText(json.encodeToString(activities))
         }
     }
+
+    fun delete(id: Long) {
+        synchronized(lock) {
+            val activities = loadAll().filterNot { it.id == id }
+            file.writeText(json.encodeToString(activities))
+        }
+    }
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchActivities, addActivity, updateActivity } from "./api";
+import { fetchActivities, addActivity, updateActivity, deleteActivity } from "./api";
 import type { SwimActivity } from "./types";
 import SwimChart from "./components/SwimChart";
 import ActivityInput from "./components/ActivityInput";
@@ -32,6 +32,11 @@ function App() {
     );
   };
 
+  const handleDelete = async (id: number) => {
+    await deleteActivity(id);
+    setActivities((prev) => prev.filter((a) => a.id !== id));
+  };
+
   return (
     <div className="app">
       <header>
@@ -49,6 +54,7 @@ function App() {
         <EditModal
           activity={editing}
           onSave={handleUpdate}
+          onDelete={handleDelete}
           onClose={() => setEditing(null)}
         />
       )}
