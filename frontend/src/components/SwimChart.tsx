@@ -44,13 +44,13 @@ function CustomTooltip({
 }
 
 function ClickableDot(
-  props: Record<string, unknown> & { onClick: (activity: SwimActivity) => void }
+  props: Record<string, unknown> & { onEdit: (activity: SwimActivity) => void }
 ) {
-  const { cx, cy, payload, onClick } = props as {
+  const { cx, cy, payload, onEdit } = props as {
     cx: number;
     cy: number;
     payload: SwimActivity;
-    onClick: (activity: SwimActivity) => void;
+    onEdit: (activity: SwimActivity) => void;
   };
   return (
     <circle
@@ -62,7 +62,7 @@ function ClickableDot(
       cursor="pointer"
       onClick={(e) => {
         e.stopPropagation();
-        onClick(payload);
+        onEdit(payload);
       }}
     />
   );
@@ -103,7 +103,7 @@ export default function SwimChart({ activities, onDotClick }: Props) {
             stroke="#4a90d9"
             strokeWidth={2}
             dot={{ r: 5, fill: "#4a90d9", cursor: "pointer" }}
-            activeDot={<ClickableDot onClick={onDotClick} />}
+            activeDot={<ClickableDot onEdit={onDotClick} />}
           />
         </LineChart>
       </ResponsiveContainer>
