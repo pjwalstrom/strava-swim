@@ -81,13 +81,25 @@ fun Application.configureRoutes(stravaClient: StravaClient, store: ActivityStore
             }
 
             val request = call.receive<UpdateActivityRequest>()
-            val newPace = if (request.distance > 0 && existing.elapsedTime > 0) {
-                (existing.elapsedTime.toDouble() / request.distance) * 100.0
+
+            // Derive elapsed time from existing pace if not stored (legacy data)
+            val elapsed = if (existing.elapsedTime > 0) {
+                existing.elapsedTime.toDouble()
+            } else {
+                existing.avgPace100m * existing.distance / 100.0
+            }
+
+            val newPace = if (request.distance > 0 && elapsed > 0) {
+                (elapsed / request.distance) * 100.0
             } else {
                 existing.avgPace100m
             }
 
-            val updated = existing.copy(distance = request.distance, avgPace100m = newPace)
+            val updated = existing.copy(
+                distance = request.distance,
+                avgPace100m = newPace,
+                elapsedTime = elapsed.toInt()
+            )
             store.save(updated)
             log.info("Updated activity $id: distance=${request.distance}, newPace=${newPace}s/100m")
             call.respond(updated)
