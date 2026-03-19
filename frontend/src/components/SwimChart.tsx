@@ -83,13 +83,15 @@ export default function SwimChart({ activities, onDotClick }: Props) {
       <ResponsiveContainer width="100%" height={350}>
         <LineChart
           data={activities}
-          margin={{ top: 10, right: 20, bottom: 10, left: 10 }}
+          margin={{ top: 10, right: 20, bottom: 60, left: 10 }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
           <XAxis
             dataKey="date"
             tickFormatter={formatDate}
             tick={{ fontSize: 13, fill: "#888" }}
+            angle={-90}
+            textAnchor="end"
           />
           <YAxis
             dataKey="avgPace100m"

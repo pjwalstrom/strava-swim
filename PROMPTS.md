@@ -51,3 +51,5 @@
 25. fix frontend npm install
 
 27. undo
+
+28. labels on x-axis should be vertical
