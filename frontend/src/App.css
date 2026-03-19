@@ -128,7 +128,21 @@ h1 {
 .modal-date {
   color: #999;
   font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.modal-link {
+  font-size: 0.85rem;
   margin-bottom: 1rem;
+}
+
+.modal-link a {
+  color: #4a90d9;
+  text-decoration: none;
+}
+
+.modal-link a:hover {
+  text-decoration: underline;
 }
 
 .modal label {

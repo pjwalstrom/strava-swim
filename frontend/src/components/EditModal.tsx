@@ -50,6 +50,11 @@ export default function EditModal({ activity, onSave, onDelete, onClose }: Props
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         <h2>{activity.name}</h2>
         <p className="modal-date">{activity.date}</p>
+        <p className="modal-link">
+          <a href={`https://www.strava.com/activities/${activity.id}`} target="_blank" rel="noreferrer">
+            strava.com/activities/{activity.id}
+          </a>
+        </p>
         <form onSubmit={handleSubmit}>
           <label>
             Distance (m)
