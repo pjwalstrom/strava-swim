@@ -1,6 +1,9 @@
 # Prompt History
 
-1. Context: a web-page that shows the user a graph for average 100 m times for pool swim sessions from Strava. The user should have the possiblity to enter a Strava activity id (e.g. 17775830712) and the system should use the Strava API v3 to GET the activity (https://developers.strava.com/docs/reference/) Aestethic: a clean dashboard layout with a graph showing a date on the x-axis and average 100 m time on the y-axis Stack: Typescript for frontend, Kotlin for backend, persistence layer should be a file Experience: calm, focused and distraction-free
+1. Context: a web-page that shows the user a graph for average 100 m times for pool swim sessions from Strava. The user should have the possiblity to enter a Strava activity id (e.g. 17775830712) and the system should use the Strava API v3 to GET the activity (https://developers.strava.com/docs/reference/)   
+Aestethic: a clean dashboard layout with a graph showing a date on the x-axis and average 100 m time on the y-axis   
+Stack: Typescript for frontend, Kotlin for backend, persistence layer should be a file   
+Experience: calm, focused and distraction-free
 
 2. I get a 404 and 'activity not found' when adding an activity. What is the error? Wrong token? There is nothing in the logs
 
