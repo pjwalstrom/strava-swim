@@ -80,10 +80,10 @@ export default function SwimChart({ activities, onDotClick }: Props) {
 
   return (
     <div className="chart-container">
-      <ResponsiveContainer width="100%" height={350}>
+      <ResponsiveContainer width="100%" height={420}>
         <LineChart
           data={activities}
-          margin={{ top: 10, right: 20, bottom: 60, left: 10 }}
+          margin={{ top: 10, right: 20, bottom: 80, left: 10 }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
           <XAxis

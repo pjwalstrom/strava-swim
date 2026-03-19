@@ -53,3 +53,5 @@
 27. undo
 
 28. labels on x-axis should be vertical
+
+29. make the x-axis longer so that all labels are visible
