@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.gradle/
+build/
+.kotlin/
+*.class
+.idea/
+.vscode/
+.env
