@@ -7,7 +7,6 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 fun Application.configureRoutes(stravaClient: StravaClient, store: ActivityStore) {
-    val log = log
     routing {
         get("/api/activities") {
             val activities = store.loadAll().sortedByDescending { it.date }
