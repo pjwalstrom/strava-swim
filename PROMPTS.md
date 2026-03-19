@@ -45,3 +45,5 @@
 22. add a dependabot github action that automatically updates both frontend and backend dependencies
 
 23. update the Getting started section in README.md to show the reduced need to enter TOKEN and SECRET on the CLI when starting the backend
+
+24. merge all Pull Requests
