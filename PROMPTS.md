@@ -41,3 +41,5 @@
 20. the dates on the graph should be ISO 8601. Oldest dates to the left
 
 21. save all my prompts in this session in a prompt history file in this repo. All my future prompts should also go into that file
+
+22. add a dependabot github action that automatically updates both frontend and backend dependencies

@@ -8,22 +8,6 @@
         "laps": 2
     },
     {
-        "id": 17526979139,
-        "name": "Morning Swim",
-        "date": "2026-02-26",
-        "avgPace100m": 140.75862068965517,
-        "distance": 1450.0,
-        "laps": 1
-    },
-    {
-        "id": 17292298911,
-        "name": "Teste Tøyenbadet igjen",
-        "date": "2026-02-05",
-        "avgPace100m": 148.77777777777777,
-        "distance": 1000.0,
-        "laps": 2
-    },
-    {
         "id": 14980767492,
         "name": "Morning Swim",
         "date": "2025-07-02",
@@ -255,5 +239,23 @@
         "distance": 1500.0,
         "laps": 1,
         "elapsedTime": 1960
+    },
+    {
+        "id": 17292298911,
+        "name": "Teste Tøyenbadet igjen",
+        "date": "2026-02-05",
+        "avgPace100m": 135.25252525252526,
+        "distance": 1100.0,
+        "laps": 2,
+        "elapsedTime": 1487
+    },
+    {
+        "id": 17526979139,
+        "name": "Morning Swim",
+        "date": "2026-02-26",
+        "avgPace100m": 136.06666666666666,
+        "distance": 1500.0,
+        "laps": 1,
+        "elapsedTime": 2041
     }
 ]
