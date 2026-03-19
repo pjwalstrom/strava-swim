@@ -49,3 +49,5 @@
 24. merge all Pull Requests
 
 25. fix frontend npm install
+
+26. adjust the x-axis to visualize the time difference between activities
