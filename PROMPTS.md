@@ -62,3 +62,7 @@ Experience: calm, focused and distraction-free
 30. increase chart width
 
 31. in Routes.kt, the logger used is not the one configured
+
+32. create a copilot instructions file
+
+33. reject the open PR
