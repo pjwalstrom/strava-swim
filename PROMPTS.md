@@ -78,3 +78,5 @@ Experience: calm, focused and distraction-free
 38. Activity 179582594 is listed, even though it is an outdoor swim. Use that as an example
 
 39. commit and push
+
+40. roll back the check for pool length and filter to only show indoor swims. It does not work. Just show all swim activities

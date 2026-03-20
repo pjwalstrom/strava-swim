@@ -26,8 +26,7 @@ data class StravaActivity(
     val name: String,
     @SerialName("start_date_local") val startDateLocal: String,
     val type: String,
-    val distance: Double,
-    @SerialName("pool_length") val poolLength: Double? = null
+    val distance: Double
 )
 
 @Serializable

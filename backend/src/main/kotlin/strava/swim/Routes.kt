@@ -8,16 +8,6 @@ import io.ktor.server.routing.*
 
 fun Application.configureRoutes(stravaClient: StravaClient, store: ActivityStore) {
     routing {
-        get("/api/strava/activities/{id}/raw") {
-            val id = call.parameters["id"]?.toLongOrNull()
-            if (id == null) {
-                call.respond(HttpStatusCode.BadRequest, mapOf("error" to "Invalid activity ID"))
-                return@get
-            }
-            val raw = stravaClient.getActivityRaw(id)
-            call.respondText(raw, ContentType.Application.Json)
-        }
-
         get("/api/strava/activities") {
             log.info("GET /api/strava/activities → fetching swims from Strava")
             try {
