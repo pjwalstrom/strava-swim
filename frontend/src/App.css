@@ -215,3 +215,103 @@ h1 {
 .btn-danger:hover:not(:disabled) {
   background: #c9302c !important;
 }
+
+/* Strava fetch section */
+.strava-section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.strava-fetch-btn {
+  padding: 0.6rem 1.5rem;
+  background: #fc4c02;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.strava-fetch-btn:hover:not(:disabled) {
+  background: #e04400;
+}
+
+.strava-fetch-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Strava swim list */
+.strava-list {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 1rem;
+}
+
+.strava-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid #eee;
+}
+
+.strava-item:last-child {
+  border-bottom: none;
+}
+
+.strava-item-exists {
+  opacity: 0.5;
+}
+
+.strava-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.strava-item-name {
+  font-size: 0.9rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.strava-item-meta {
+  font-size: 0.78rem;
+  color: #999;
+}
+
+.strava-item-added {
+  font-size: 0.8rem;
+  color: #999;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+}
+
+.strava-item-btn {
+  padding: 0.3rem 0.9rem;
+  background: #4a90d9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+}
+
+.strava-item-btn:hover:not(:disabled) {
+  background: #3a7bc8;
+}
+
+.strava-item-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

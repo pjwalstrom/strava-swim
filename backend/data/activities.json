@@ -258,5 +258,14 @@
         "distance": 1500.0,
         "laps": 2,
         "elapsedTime": 1921
+    },
+    {
+        "id": 288643071,
+        "name": "04/19/2015 Norway",
+        "date": "2015-04-19",
+        "avgPace100m": 219.42857142857144,
+        "distance": 1550.0,
+        "laps": 1,
+        "elapsedTime": 3456
     }
 ]

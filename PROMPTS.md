@@ -66,3 +66,13 @@ Experience: calm, focused and distraction-free
 32. create a copilot instructions file
 
 33. reject the open PR
+
+34. Query Strava for all indoor swims when user press a button. List these activities and make it possible to add to the graph with a single click. Those activities already added to the graph should also be listed, but clearly indicated that they already are present in the graph and disabled for adding. List the activites with the oldest first
+
+35. explore how to avoid fetching all activities - only swim activities should be fetched
+
+36. filter to only show indoor swims
+
+37. that did not work. Pool swims typically have a metadata field called 'Pool Length'. Check if that can be used
+
+38. Activity 179582594 is listed, even though it is an outdoor swim. Use that as an example

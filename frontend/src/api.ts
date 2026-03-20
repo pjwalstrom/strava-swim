@@ -1,4 +1,4 @@
-import type { SwimActivity } from "./types";
+import type { SwimActivity, StravaActivitySummary } from "./types";
 
 const API_BASE = "http://localhost:8080";
 
@@ -14,6 +14,12 @@ async function parseError(res: Response, fallback: string): Promise<string> {
 export async function fetchActivities(): Promise<SwimActivity[]> {
   const res = await fetch(`${API_BASE}/api/activities`);
   if (!res.ok) throw new Error(await parseError(res, "Failed to fetch activities"));
+  return res.json();
+}
+
+export async function fetchStravaSwims(): Promise<StravaActivitySummary[]> {
+  const res = await fetch(`${API_BASE}/api/strava/activities`);
+  if (!res.ok) throw new Error(await parseError(res, "Failed to fetch Strava swims"));
   return res.json();
 }
 

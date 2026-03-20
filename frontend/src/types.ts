@@ -7,3 +7,10 @@ export interface SwimActivity {
   laps: number;
   elapsedTime: number; // total seconds
 }
+
+export interface StravaActivitySummary {
+  id: number;
+  name: string;
+  date: string;
+  distance: number;
+}

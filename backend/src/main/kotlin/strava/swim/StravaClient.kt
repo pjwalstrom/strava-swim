@@ -79,6 +79,15 @@ class StravaClient {
         return response.body()
     }
 
+    suspend fun getActivityRaw(id: Long): String {
+        val token = ensureToken()
+        val response = client.get("https://www.strava.com/api/v3/activities/$id") {
+            header("Authorization", "Bearer $token")
+        }
+        checkResponse(response)
+        return response.bodyAsText()
+    }
+
     suspend fun getLaps(id: Long): List<StravaLap> {
         val token = ensureToken()
         val response = client.get("https://www.strava.com/api/v3/activities/$id/laps") {
@@ -86,5 +95,56 @@ class StravaClient {
         }
         checkResponse(response)
         return response.body()
+    }
+
+    suspend fun getAthleteSwimActivities(): List<StravaActivitySummary> {
+        val swimIds = mutableListOf<Long>()
+        var page = 1
+        val perPage = 200
+
+        // Collect all Swim activity IDs from the list endpoint
+        while (true) {
+            val token = ensureToken()
+            val response = client.get("https://www.strava.com/api/v3/athlete/activities") {
+                header("Authorization", "Bearer $token")
+                parameter("page", page)
+                parameter("per_page", perPage)
+            }
+            checkResponse(response)
+            val activities = response.body<List<StravaActivity>>()
+
+            if (activities.isEmpty()) break
+
+            activities
+                .filter { it.type == "Swim" }
+                .mapTo(swimIds) { it.id }
+
+            if (activities.size < perPage) break
+            page++
+            log.info("Fetched page $page of athlete activities")
+        }
+
+        log.info("Found ${swimIds.size} swim activities, checking for pool swims")
+
+        // Fetch detail for each swim to check pool_length
+        val poolSwims = mutableListOf<StravaActivitySummary>()
+        for (id in swimIds) {
+            val detail = getActivity(id)
+            if (detail.poolLength != null && detail.poolLength > 0) {
+                poolSwims.add(
+                    StravaActivitySummary(
+                        id = detail.id,
+                        name = detail.name,
+                        date = detail.startDateLocal.substringBefore("T"),
+                        distance = detail.distance
+                    )
+                )
+            } else {
+                log.info("Skipping activity $id (${detail.name}): no pool length")
+            }
+        }
+
+        log.info("Found ${poolSwims.size} pool swim activities")
+        return poolSwims.sortedBy { it.date }
     }
 }

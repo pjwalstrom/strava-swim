@@ -57,7 +57,7 @@ cd frontend && npm install && npm run dev
 
 ## Prompt History
 
-All prompts are tracked in `PROMPTS.md` at the repo root. Append new prompts there.
+All prompts are tracked in `PROMPTS.md` at the repo root. Append new prompts there. Also, make a new git commit after each prompt if there are code changes.
 
 ## Guidelines
 
