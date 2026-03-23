@@ -168,14 +168,6 @@
         "laps": 1
     },
     {
-        "id": 13271455688,
-        "name": "Lunch Swim",
-        "date": "2025-01-05",
-        "avgPace100m": 208.68571428571428,
-        "distance": 875.0,
-        "laps": 1
-    },
-    {
         "id": 10229804840,
         "name": "Evening Swim i Addis",
         "date": "2023-11-16",
@@ -205,14 +197,6 @@
         "date": "2016-11-16",
         "avgPace100m": 126.49999999999999,
         "distance": 600.0,
-        "laps": 1
-    },
-    {
-        "id": 766359371,
-        "name": "Afternoon Swim",
-        "date": "2016-11-04",
-        "avgPace100m": 111.00000000000001,
-        "distance": 100.0,
         "laps": 1
     },
     {
@@ -260,12 +244,75 @@
         "elapsedTime": 1921
     },
     {
-        "id": 288643071,
-        "name": "04/19/2015 Norway",
-        "date": "2015-04-19",
-        "avgPace100m": 219.42857142857144,
-        "distance": 1550.0,
+        "id": 13271455688,
+        "name": "Lunch Swim",
+        "date": "2025-01-05",
+        "avgPace100m": 166.0,
+        "distance": 1100.0,
         "laps": 1,
-        "elapsedTime": 3456
+        "elapsedTime": 1826
+    },
+    {
+        "id": 248426192,
+        "name": "Fredrikstad vintertri",
+        "date": "2015-01-31",
+        "avgPace100m": 113.45454545454545,
+        "distance": 525.0,
+        "laps": 1,
+        "elapsedTime": 624
+    },
+    {
+        "id": 375967092,
+        "name": "Evening Swim",
+        "date": "2015-08-23",
+        "avgPace100m": 123.8,
+        "distance": 975.0,
+        "laps": 1,
+        "elapsedTime": 1238
+    },
+    {
+        "id": 386507060,
+        "name": "Evening Swim",
+        "date": "2015-09-06",
+        "avgPace100m": 125.85,
+        "distance": 1975.0,
+        "laps": 1,
+        "elapsedTime": 2517
+    },
+    {
+        "id": 391672200,
+        "name": "Evening Swim",
+        "date": "2015-09-13",
+        "avgPace100m": 124.04761904761905,
+        "distance": 2075.0,
+        "laps": 1,
+        "elapsedTime": 2605
+    },
+    {
+        "id": 420336179,
+        "name": "O3-svømming",
+        "date": "2015-10-25",
+        "avgPace100m": 131.72727272727275,
+        "distance": 1075.0,
+        "laps": 10,
+        "elapsedTime": 1449
+    },
+    {
+        "id": 424692822,
+        "name": "Evening Swim",
+        "date": "2015-11-01",
+        "avgPace100m": 124.18181818181817,
+        "distance": 1075.0,
+        "laps": 1,
+        "elapsedTime": 1366
+    },
+    {
+        "id": 6057144947,
+        "name": "Lunch Swim",
+        "date": "2021-10-03",
+        "avgPace100m": 117.33333333333333,
+        "distance": 225.0,
+        "laps": 1,
+        "elapsedTime": 264
     }
 ]
