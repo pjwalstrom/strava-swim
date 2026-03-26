@@ -237,7 +237,7 @@
         "id": 17775830712,
         "name": "T\u00f8yenbadet",
         "date": "2026-03-19",
-        "avgPace100m": 135.17241379310346,
+        "avgPace100m": 130.66666666666666,
         "distance": 1500.0,
         "laps": 1,
         "elapsedTime": 1960
@@ -246,7 +246,7 @@
         "id": 17292298911,
         "name": "Teste T\u00f8yenbadet igjen",
         "date": "2026-02-05",
-        "avgPace100m": 154.20000000000002,
+        "avgPace100m": 140.1818181818182,
         "distance": 1100.0,
         "laps": 2,
         "elapsedTime": 1542
@@ -255,7 +255,7 @@
         "id": 17526979139,
         "name": "Morning Swim",
         "date": "2026-02-26",
-        "avgPace100m": 140.75862068965517,
+        "avgPace100m": 136.06666666666666,
         "distance": 1500.0,
         "laps": 1,
         "elapsedTime": 2041
@@ -264,7 +264,7 @@
         "id": 13271455688,
         "name": "Lunch Swim",
         "date": "2025-01-05",
-        "avgPace100m": 208.68571428571428,
+        "avgPace100m": 166.0,
         "distance": 1100.0,
         "laps": 1,
         "elapsedTime": 1826
@@ -273,7 +273,7 @@
         "id": 248426192,
         "name": "Fredrikstad vintertri",
         "date": "2015-01-31",
-        "avgPace100m": 113.45454545454545,
+        "avgPace100m": 118.85714285714286,
         "distance": 525.0,
         "laps": 1,
         "elapsedTime": 624
@@ -282,7 +282,7 @@
         "id": 375967092,
         "name": "Evening Swim",
         "date": "2015-08-23",
-        "avgPace100m": 123.8,
+        "avgPace100m": 126.97435897435898,
         "distance": 975.0,
         "laps": 1,
         "elapsedTime": 1238
@@ -291,7 +291,7 @@
         "id": 386507060,
         "name": "Evening Swim",
         "date": "2015-09-06",
-        "avgPace100m": 125.85,
+        "avgPace100m": 127.44303797468355,
         "distance": 1975.0,
         "laps": 1,
         "elapsedTime": 2517
@@ -300,7 +300,7 @@
         "id": 391672200,
         "name": "Evening Swim",
         "date": "2015-09-13",
-        "avgPace100m": 124.04761904761905,
+        "avgPace100m": 125.54216867469879,
         "distance": 2075.0,
         "laps": 1,
         "elapsedTime": 2605
@@ -309,7 +309,7 @@
         "id": 420336179,
         "name": "O3-sv\u00f8mming",
         "date": "2015-10-25",
-        "avgPace100m": 131.72727272727275,
+        "avgPace100m": 134.7906976744186,
         "distance": 1075.0,
         "laps": 10,
         "elapsedTime": 1449
@@ -318,7 +318,7 @@
         "id": 424692822,
         "name": "Evening Swim",
         "date": "2015-11-01",
-        "avgPace100m": 124.18181818181817,
+        "avgPace100m": 127.06976744186048,
         "distance": 1075.0,
         "laps": 1,
         "elapsedTime": 1366
@@ -327,10 +327,19 @@
         "id": 6057144947,
         "name": "Lunch Swim",
         "date": "2021-10-03",
-        "avgPace100m": 58.666666666666664,
+        "avgPace100m": 117.33333333333333,
         "distance": 225.0,
         "laps": 1,
         "elapsedTime": 264
+    },
+    {
+        "id": 17621499386,
+        "name": "T\u00f8yenbadet 1500m",
+        "date": "2026-03-06",
+        "avgPace100m": 132.26666666666665,
+        "distance": 1500.0,
+        "laps": 2,
+        "elapsedTime": 1984
     },
     {
         "id": 17862229724,
@@ -340,14 +349,5 @@
         "distance": 1500.0,
         "laps": 2,
         "elapsedTime": 1948
-    },
-    {
-        "id": 17621499386,
-        "name": "T\u00f8yenbadet 1500m",
-        "date": "2026-03-06",
-        "avgPace100m": 136.82758620689654,
-        "distance": 1500.0,
-        "laps": 2,
-        "elapsedTime": 1984
     }
 ]
