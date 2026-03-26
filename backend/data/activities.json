@@ -189,6 +189,15 @@
         "elapsedTime": 1851
     },
     {
+        "id": 10229804840,
+        "name": "Evening Swim i Addis",
+        "date": "2023-11-16",
+        "avgPace100m": 122.0,
+        "distance": 500.0,
+        "laps": 3,
+        "elapsedTime": 610
+    },
+    {
         "id": 833650818,
         "name": "Morning Swim",
         "date": "2017-01-16",

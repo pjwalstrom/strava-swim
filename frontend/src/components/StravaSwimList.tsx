@@ -1,6 +1,5 @@
 import { useState } from "react";
 import type { StravaActivitySummary } from "../types";
-import { Button, BodyShort, Tag } from "@navikt/ds-react";
 
 interface Props {
   swims: StravaActivitySummary[];
@@ -38,28 +37,26 @@ export default function StravaSwimList({ swims, existingIds, onAdd }: Props) {
             className={`strava-item ${exists ? "strava-item-exists" : ""}`}
           >
             <div className="strava-item-info">
-              <BodyShort size="small" className="strava-item-name">{swim.name}</BodyShort>
-              <BodyShort size="small" className="strava-item-meta">
+              <span className="strava-item-name">{swim.name}</span>
+              <span className="strava-item-meta">
                 {swim.date} · {formatDistance(swim.distance)}
-              </BodyShort>
+              </span>
             </div>
             {exists ? (
-              <Tag variant="success" size="small">Added</Tag>
+              <span className="strava-item-added">✓ Added</span>
             ) : (
-              <Button
-                variant="secondary"
-                size="xsmall"
+              <button
+                className="strava-item-btn"
                 disabled={addingId !== null}
-                loading={addingId === swim.id}
                 onClick={() => handleAdd(swim.id)}
               >
-                Add
-              </Button>
+                {addingId === swim.id ? "Adding…" : "Add"}
+              </button>
             )}
           </div>
         );
       })}
-      {error && <BodyShort size="small" className="input-error">{error}</BodyShort>}
+      {error && <p className="input-error">{error}</p>}
     </div>
   );
 }

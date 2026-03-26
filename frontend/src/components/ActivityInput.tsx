@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import type { FormEvent } from "react";
-import { TextField, Button, ErrorMessage } from "@navikt/ds-react";
 
 interface Props {
   onAdd: (stravaId: number) => Promise<void>;
@@ -44,21 +43,18 @@ export default function ActivityInput({ onAdd }: Props) {
   return (
     <form className="input-row" onSubmit={handleSubmit}>
       <div className="input-group">
-        <TextField
-          label="Strava activity ID"
-          hideLabel
-          size="small"
+        <input
+          type="text"
           placeholder="Strava activity ID"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           disabled={loading}
-          className="input-field"
         />
-        <Button type="submit" size="small" loading={loading}>
-          Add
-        </Button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Adding..." : "Add"}
+        </button>
       </div>
-      {error && <ErrorMessage size="small" className="input-error">{error}</ErrorMessage>}
+      {error && <p className="input-error">{error}</p>}
     </form>
   );
 }
