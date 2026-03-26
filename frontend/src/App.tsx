@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { fetchActivities, fetchStravaSwims, addActivity, updateActivity, deleteActivity } from "./api";
 import type { SwimActivity, StravaActivitySummary } from "./types";
+import { Heading, Button, Alert } from "@navikt/ds-react";
 import SwimChart from "./components/SwimChart";
 import ActivityInput from "./components/ActivityInput";
 import EditModal from "./components/EditModal";
@@ -14,6 +15,7 @@ function App() {
   const [stravaSwims, setStravaSwims] = useState<StravaActivitySummary[] | null>(null);
   const [fetchingSwims, setFetchingSwims] = useState(false);
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const modalRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
     fetchActivities()
@@ -54,30 +56,42 @@ function App() {
     }
   };
 
+  const openEdit = (activity: SwimActivity) => {
+    setEditing(activity);
+    modalRef.current?.showModal();
+  };
+
+  const closeEdit = () => {
+    modalRef.current?.close();
+    setEditing(null);
+  };
+
   const existingIds = new Set(activities.map((a) => a.id));
 
   return (
     <div className="app">
       <header>
-        <h1>Swim Pace Tracker</h1>
+        <Heading size="medium" level="1">Swim Pace Tracker</Heading>
       </header>
       <main>
         {loading ? (
           <p className="loading-text">Loading…</p>
         ) : (
-          <SwimChart activities={activities} onDotClick={setEditing} />
+          <SwimChart activities={activities} onDotClick={openEdit} />
         )}
         <ActivityInput onAdd={handleAdd} />
 
         <div className="strava-section">
-          <button
-            className="strava-fetch-btn"
+          <Button
+            variant="primary"
+            size="small"
+            loading={fetchingSwims}
             onClick={handleFetchSwims}
-            disabled={fetchingSwims}
+            className="strava-fetch-btn"
           >
-            {fetchingSwims ? "Fetching…" : "Fetch swims from Strava"}
-          </button>
-          {fetchError && <p className="input-error">{fetchError}</p>}
+            Fetch swims from Strava
+          </Button>
+          {fetchError && <Alert variant="error" size="small" className="strava-error">{fetchError}</Alert>}
           {stravaSwims && (
             <StravaSwimList
               swims={stravaSwims}
@@ -87,14 +101,13 @@ function App() {
           )}
         </div>
       </main>
-      {editing && (
-        <EditModal
-          activity={editing}
-          onSave={handleUpdate}
-          onDelete={handleDelete}
-          onClose={() => setEditing(null)}
-        />
-      )}
+      <EditModal
+        ref={modalRef}
+        activity={editing}
+        onSave={handleUpdate}
+        onDelete={handleDelete}
+        onClose={closeEdit}
+      />
     </div>
   );
 }

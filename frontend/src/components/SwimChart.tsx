@@ -8,6 +8,7 @@ import {
   CartesianGrid,
 } from "recharts";
 import type { SwimActivity } from "../types";
+import { BodyShort } from "@navikt/ds-react";
 
 function formatPace(seconds: number): string {
   const mins = Math.floor(seconds / 60);
@@ -35,11 +36,11 @@ function CustomTooltip({
   const activity = payload[0].payload;
   return (
     <div className="chart-tooltip">
-      <p className="tooltip-name">{activity.name}</p>
-      <p>{formatDate(activity.date)}</p>
-      <p>Pace: {formatPace(activity.avgPace100m)}/100m</p>
-      <p>Distance: {activity.distance}m</p>
-      <p className="tooltip-hint">Click to edit</p>
+      <BodyShort size="small" weight="semibold">{activity.name}</BodyShort>
+      <BodyShort size="small">{formatDate(activity.date)}</BodyShort>
+      <BodyShort size="small">Pace: {formatPace(activity.avgPace100m)}/100m</BodyShort>
+      <BodyShort size="small">Distance: {activity.distance}m</BodyShort>
+      <BodyShort size="small" className="tooltip-hint">Click to edit</BodyShort>
     </div>
   );
 }
@@ -73,7 +74,7 @@ export default function SwimChart({ activities, onDotClick }: Props) {
   if (activities.length === 0) {
     return (
       <div className="chart-container chart-empty">
-        <p>No swim activities yet. Add one below.</p>
+        <BodyShort>No swim activities yet. Add one below.</BodyShort>
       </div>
     );
   }

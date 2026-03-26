@@ -88,3 +88,7 @@ Experience: calm, focused and distraction-free
 43. There is something wrong with the pace. When hovering over activity 17775830712, it says pace 2:15, but when clicking the activity, it says pace 2:10
 
 44. activities.json now escapes letters such as æ ø å. Do not escape letters, use UTF-8
+
+45. estimate the effort to apply https://aksel.nav.no/designsystemet
+
+46. implement the plan

@@ -1,3 +1,5 @@
+@import "@navikt/ds-css";
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +7,5 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #fafafa;
-  color: #333;
-  line-height: 1.6;
+  background: var(--a-bg-subtle);
 }

@@ -4,17 +4,14 @@
   padding: 3rem 1.5rem;
 }
 
-h1 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #555;
-  margin-bottom: 2rem;
+header {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .loading-text {
   text-align: center;
-  color: #999;
+  color: var(--a-text-subtle);
   padding: 4rem 0;
 }
 
@@ -28,22 +25,19 @@ h1 {
   align-items: center;
   justify-content: center;
   height: 200px;
-  color: #999;
-  font-size: 0.95rem;
+  color: var(--a-text-subtle);
 }
 
 .chart-tooltip {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 8px;
+  background: var(--a-surface-default);
+  border: 1px solid var(--a-border-subtle);
+  border-radius: var(--a-border-radius-medium);
   padding: 0.6rem 0.8rem;
-  font-size: 0.85rem;
   line-height: 1.5;
 }
 
-.tooltip-name {
-  font-weight: 600;
-  color: #333;
+.tooltip-hint {
+  color: var(--a-text-subtle);
 }
 
 /* Input */
@@ -56,164 +50,31 @@ h1 {
 .input-group {
   display: flex;
   gap: 0.5rem;
+  align-items: end;
   justify-content: center;
 }
 
-.input-group input {
-  padding: 0.6rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.2s;
+.input-field {
   width: 220px;
 }
 
-.input-group input:focus {
-  border-color: #4a90d9;
-}
-
-.input-group button {
-  padding: 0.6rem 1.5rem;
-  background: #4a90d9;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.input-group button:hover:not(:disabled) {
-  background: #3a7bc8;
-}
-
-.input-group button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
 .input-error {
-  color: #d9534f;
-  font-size: 0.85rem;
   margin-top: 0.5rem;
 }
 
 /* Modal */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-}
-
-.modal {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
-  width: 320px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-}
-
-.modal h2 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 0.25rem;
-}
-
 .modal-date {
-  color: #999;
-  font-size: 0.85rem;
+  color: var(--a-text-subtle);
   margin-bottom: 0.25rem;
 }
 
 .modal-link {
-  font-size: 0.85rem;
   margin-bottom: 1rem;
 }
 
-.modal-link a {
-  color: #4a90d9;
-  text-decoration: none;
-}
-
-.modal-link a:hover {
-  text-decoration: underline;
-}
-
-.modal label {
-  display: block;
-  font-size: 0.85rem;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-.modal input {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  outline: none;
-  margin-top: 0.25rem;
-}
-
-.modal input:focus {
-  border-color: #4a90d9;
-}
-
 .modal-preview {
-  color: #4a90d9;
-  font-size: 0.9rem;
+  color: var(--a-text-action);
   margin: 0.75rem 0;
-}
-
-.modal-actions {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: flex-end;
-  margin-top: 1rem;
-}
-
-.modal-actions .btn-danger {
-  margin-right: auto;
-}
-
-.modal-actions button {
-  padding: 0.5rem 1.2rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  border: none;
-  background: #4a90d9;
-  color: white;
-  transition: background 0.2s;
-}
-
-.modal-actions button:hover:not(:disabled) {
-  background: #3a7bc8;
-}
-
-.btn-secondary {
-  background: #eee !important;
-  color: #555 !important;
-}
-
-.btn-secondary:hover {
-  background: #ddd !important;
-}
-
-.btn-danger {
-  background: #d9534f !important;
-}
-
-.btn-danger:hover:not(:disabled) {
-  background: #c9302c !important;
 }
 
 /* Strava fetch section */
@@ -225,23 +86,17 @@ h1 {
 }
 
 .strava-fetch-btn {
-  padding: 0.6rem 1.5rem;
-  background: #fc4c02;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background 0.2s;
+  background: #fc4c02 !important;
+  border-color: #fc4c02 !important;
 }
 
-.strava-fetch-btn:hover:not(:disabled) {
-  background: #e04400;
+.strava-fetch-btn:hover {
+  background: #e04400 !important;
+  border-color: #e04400 !important;
 }
 
-.strava-fetch-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.strava-error {
+  margin-top: 0.5rem;
 }
 
 /* Strava swim list */
@@ -256,7 +111,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   padding: 0.6rem 0.8rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--a-border-subtle);
 }
 
 .strava-item:last-child {
@@ -275,43 +130,11 @@ h1 {
 }
 
 .strava-item-name {
-  font-size: 0.9rem;
-  color: #333;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .strava-item-meta {
-  font-size: 0.78rem;
-  color: #999;
-}
-
-.strava-item-added {
-  font-size: 0.8rem;
-  color: #999;
-  white-space: nowrap;
-  margin-left: 0.5rem;
-}
-
-.strava-item-btn {
-  padding: 0.3rem 0.9rem;
-  background: #4a90d9;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  white-space: nowrap;
-  margin-left: 0.5rem;
-}
-
-.strava-item-btn:hover:not(:disabled) {
-  background: #3a7bc8;
-}
-
-.strava-item-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+  color: var(--a-text-subtle);
 }
