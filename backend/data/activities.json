@@ -349,5 +349,23 @@
         "distance": 1500.0,
         "laps": 2,
         "elapsedTime": 1984
+    },
+    {
+        "id": 18036946817,
+        "name": "Tøyenbadet",
+        "date": "2026-04-09",
+        "avgPace100m": 134.26666666666668,
+        "distance": 1500.0,
+        "laps": 1,
+        "elapsedTime": 2014
+    },
+    {
+        "id": 17960824089,
+        "name": "Utendørs bassengsvømming",
+        "date": "2026-04-03",
+        "avgPace100m": 131.33333333333331,
+        "distance": 1500.0,
+        "laps": 1,
+        "elapsedTime": 1970
     }
 ]
