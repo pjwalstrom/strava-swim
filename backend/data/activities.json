@@ -367,5 +367,23 @@
         "distance": 1500.0,
         "laps": 1,
         "elapsedTime": 1970
+    },
+    {
+        "id": 18262775328,
+        "name": "Svømming NIH med Oslofjord tri",
+        "date": "2026-04-26",
+        "avgPace100m": 125.48717948717949,
+        "distance": 1950.0,
+        "laps": 27,
+        "elapsedTime": 2447
+    },
+    {
+        "id": 18128000321,
+        "name": "Morning Swim Tøyenbadet",
+        "date": "2026-04-16",
+        "avgPace100m": 137.6,
+        "distance": 1500.0,
+        "laps": 2,
+        "elapsedTime": 2064
     }
 ]
