@@ -385,5 +385,14 @@
         "distance": 1500.0,
         "laps": 2,
         "elapsedTime": 2064
+    },
+    {
+        "id": 18408434520,
+        "name": "Tøyenbadet",
+        "date": "2026-05-07",
+        "avgPace100m": 134.53333333333333,
+        "distance": 1500.0,
+        "laps": 2,
+        "elapsedTime": 2018
     }
 ]
